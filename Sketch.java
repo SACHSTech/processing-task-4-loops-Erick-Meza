@@ -1,13 +1,13 @@
 import processing.core.PApplet;
 
 public class Sketch extends PApplet {
-  
+
   /**
    * Called once at the beginning of execution, put your size all in this method
    */
   public void settings() {
 	// put your size call here
-    size(600, 600);
+    size(500, 500);
 
   }
 
@@ -28,17 +28,17 @@ public class Sketch extends PApplet {
     int intColour = 0;
     float fltAngle = 0;
 
-    // draws the 10 x 10 grid in quadrant 1
+    // Draws the 10 x 10 grid in quadrant 1
     for (int intVerticalLines = 0; intVerticalLines <= width / 2; intVerticalLines += (width / 2) / 10){
       stroke(0,0,0);
       line(intVerticalLines, 0, intVerticalLines, height / 2);
-    }
+
     for (int intHorizontalLines = 0; intHorizontalLines <= height / 2; intHorizontalLines += (width / 2) / 10){
       stroke(0,0,0);
       line(0, intHorizontalLines, width / 2, intHorizontalLines);
     }
 
-    //draws the black to white gradient in quadrant 3
+    // Draws the black to white gradient in quadrant 3
     for (int intLines = 0; intLines <= width / 2; intLines++){
       intColour = intColour + 1;
       stroke(intColour,intColour,intColour);
@@ -58,7 +58,7 @@ public class Sketch extends PApplet {
     translate(width * (float) (0.75), height * (float) (0.75));
 
     // Creates a for loop to draw the flower petals in quadrant 4
-    for(int i = 0; i <= 4; i++){
+    for(int intPetals = 0; intPetals <= 4; intPetals++){
       rotate(radians(fltAngle));
       fill(220,93,52);
       ellipse(0, 0, width / 20, height / (float) (2.5));
